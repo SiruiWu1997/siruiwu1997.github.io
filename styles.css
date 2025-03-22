@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252a;
+    color: #edf0f1;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+    /* <A> Hover Effect */
+a{
+    transition: all 0.3s ease 0s;
+}
+
+a:hover{
+    color: #0088a9;
+}
+
+/*----- Header -----*/
+
+header{
+    position: sticky;
+    top: 0;
+    height: 10vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+    /* navbar */
+#navbar{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    list-style-type: none;
+}
+
+#navbar li{  
+    padding: 0px 20px;
+}
+
+#navbar li a{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/*-----sections-----*/
+
+.main{
+    padding: 5vh;
+    min-height: 100vh;
+}
+
+    /* welcome */
+#welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    align-items:center;
+    height: 90vh;
+}
+
+#welcome h1{
+    font-size: 3em;
+}
+
+#arrow{
+    top: 10vh;
+    width: 30px;
+    height: 30px;
+    border-top:5px solid #fff;
+    border-left:5px solid #fff;
+    transform: rotate(-135deg);
+    animation: arrow-load 2s infinite;
+}
+
+    /* projects */
+.project-block{
+    padding-top: 5vh;
+}
+    /* resume */
