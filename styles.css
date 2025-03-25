@@ -2,11 +2,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252a;
     color: #edf0f1;
 }
 
-html{
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+a{
     scroll-behavior: smooth;
 }
 
@@ -25,70 +29,118 @@ a:hover{
 }
 
 /*----- Header -----*/
-
 header{
+    background-color: #24252a;
     position: sticky;
     top: 0;
     height: 10vh;
     display: flex;
     align-items:center;
     justify-content: center;
+    z-index: 9;
 }
 
     /* navbar */
-#navbar{
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:center;
-    list-style-type: none;
-}
+    #navbar{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        list-style-type: none;
+    }
 
-#navbar li{  
-    padding: 0px 20px;
-}
+    #navbar li{  
+        padding: 0px 20px;
+    }
 
-#navbar li a{
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
-}
+    #navbar li a{
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+    }
 
 /*-----sections-----*/
+section{
+    background-color: #24252a;
+    scroll-snap-align: start; /* 确保子元素起始位置对齐 */
+}
 
 .main{
     padding: 5vh;
+    padding-top: 10vh;
     min-height: 100vh;
 }
 
     /* welcome */
-#welcome{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align:center;
-    align-items:center;
-    height: 90vh;
+    #welcome{
+        scroll-snap-align: start; /* 保持与 section 一致 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align:center;
+        align-items:center;
+        height: 90vh;
+    }
+
+    #welcome h1{
+        font-size: 3em;
+        /* welcome animation */
+        overflow: hidden; 
+        animation: animated-text 2s steps(29,end) 1s 1 normal both, 
+        animated-cursor 600ms steps(29,end) infinite;
 }
 
-#welcome h1{
-    font-size: 3em;
-}
+            /* text animation */
+            @keyframes animated-text{
+                from{width: 0;}
+                to{width: 472px;}
+            }
+  
+            /* cursor animations */
+            @keyframes animated-cursor{
+                from{border-right-color: #edf0f1;}
+                to{border-right-color: transparent;}
+            }
 
-#arrow{
-    top: 10vh;
-    width: 30px;
-    height: 30px;
-    border-top:5px solid #fff;
-    border-left:5px solid #fff;
-    transform: rotate(-135deg);
-    animation: arrow-load 2s infinite;
-}
+    /* Arrow */
+    #arrow-container{
+        position: relative;
+        display: flex;
+        transform: rotate(-90deg);
+        top: 15vh;
+        z-index: 1;
+    }
+
+    .arrow{
+        position: relative;
+        width: 5vh;
+        height: 5vh;
+        border-top:1vh solid #fff;
+        border-left:1vh solid #fff;
+        transform: rotate(-45deg);
+        animation: arrow-load 2s infinite;
+    }
+
+        /* arrow animations */
+        @keyframes arrow-load{
+            0%{
+            opacity: 0;
+            transform: rotate(-45deg) translate(5vh, 5vh);
+        }
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            transform: rotate(-45deg) translate(-5vh, -5vh);
+        }
+    }
 
     /* projects */
-.project-block{
-    padding-top: 5vh;
-}
+    .project-block{
+        padding-top: 5vh;
+    }
+
     /* resume */
