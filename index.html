@@ -24,9 +24,9 @@
     <h1>HELLO_WORLD!</h1>
     <p>My name is <strong>Sirui Wu</strong> and I'm a <strong>Web Developer</strong>.</p>
     <div id="arrow-container">
-      <a href="#projects"><div class="arrow"></div></a>
-      <a href="#projects"><div class="arrow"></div></a>
-      <a href="#projects"><div class="arrow"></div></a>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
     </div>
   </section>
 
@@ -35,9 +35,10 @@
     <div>
       <h1>Projects</h1>
       <!-- Project -->
+      <div id="project-container">
       <div class="project-block" id="p1">
         <h3 class="project-tile">My Portfolio Page(This Site)</h3>
-        <img src="" alt="">
+        <img id="gif1" src="./project1.gif" alt="Portfolio Page On different devices">
         <p>A <strong>Responsive</strong> website base on HTML5 + CSS3</p>
         <p><a href="">View</a></p>
       </div>
@@ -48,13 +49,16 @@
         <p><a href="">View</a></p>
       </div>
     </div>
+    </div>
 
   </section>
 
   <!-- Resume -->
   <section id="resume" class="main">
     <h1 class="resume-link">Resume</h1>
-    <p><a id="resume-link" href="https://www.gamersky.com/" target="_blank">Resume</a></p>
+    <div id="resume-container">
+      <img id="resume-img" src="./Sirui_Wu_Resume.png" alt="Resume" onclick="window.open('./Sirui_Wu_Resume.pdf', '_blank')">
+    </div>
   </section>
 
 </body>
